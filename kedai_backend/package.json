@@ -1,0 +1,21 @@
+{
+  "name": "kedai_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "bun run src/main.ts --watch"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "Peter",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0",
+  "devDependencies": {
+    "@types/express": "^5.0.2",
+    "express": "^5.1.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}

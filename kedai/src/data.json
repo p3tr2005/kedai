@@ -1,0 +1,32 @@
+[
+  {
+    "imageUrl": "/BOBA_TARO.png",
+    "title": "Taro Boba",
+    "description": "A sweet and creamy taro-flavored boba drink with purple goodness.",
+    "price": "Rp 25.000"
+  },
+  {
+    "imageUrl": "/BOBA_TARO.png",
+    "title": "Chocolate Boba",
+    "description": "Rich chocolate milk tea with chewy boba pearls. A favorite for all ages.",
+    "price": "Rp 26.000"
+  },
+  {
+    "imageUrl": "/BOBA_TARO.png",
+    "title": "Mango Boba",
+    "description": "Fresh mango blended into a tropical boba drink. Refreshing and fruity.",
+    "price": "Rp 24.000"
+  },
+  {
+    "imageUrl": "/BOBA_TARO.png",
+    "title": "Cappuccino Boba",
+    "description": "Bold coffee flavor mixed with creamy milk and chewy tapioca pearls.",
+    "price": "Rp 27.000"
+  },
+  {
+    "imageUrl": "/BOBA_TARO.png",
+    "title": "Tiramisu Boba",
+    "description": "Inspired by the classic dessert, this boba is rich with coffee and mascarpone flavor.",
+    "price": "Rp 28.000"
+  }
+]
