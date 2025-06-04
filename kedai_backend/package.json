@@ -4,7 +4,10 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "dev": "bun run src/main.ts --watch"
+    "dev": "bun run --watch src/index.ts",
+    "db:studio": "bunx drizzle-kit studio --port=8080",
+    "db:migrate": "bunx --bun drizzle-kit migrate",
+    "db:gen": "bunx --bun drizzle-kit generate"
   },
   "type": "module",
   "keywords": [],
@@ -13,9 +16,15 @@
   "packageManager": "pnpm@10.11.0",
   "devDependencies": {
     "@types/express": "^5.0.2",
-    "express": "^5.1.0"
+    "drizzle-kit": "^0.31.1",
+    "express": "^5.1.0",
+    "tsx": "^4.19.4"
   },
   "dependencies": {
-    "cors": "^2.8.5"
+    "@libsql/client": "^0.15.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.44.2",
+    "valibot": "^1.1.0"
   }
 }

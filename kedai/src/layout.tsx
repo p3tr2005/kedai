@@ -14,9 +14,7 @@ const queryClient = new QueryClient();
 function Layout() {
   const productsLength = useCart((state) => state.products).length;
   const navigate = useNavigate();
-  const queryState = useLocation().state as {
-    inputValue: string | undefined;
-  } | null;
+  const queryState = useLocation().search?.split("=")[1] || "";
 
   const onInputSend = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
@@ -24,12 +22,10 @@ function Layout() {
 
       console.log("[INPUT_SEND] - ", query);
 
-      navigate("/products", {
-        state: {
-          query,
-          inputValue: query,
-        },
-      });
+      navigate(
+        { pathname: "/products", search: `?search=${query}` },
+        { replace: true }
+      );
     }
   };
 
@@ -42,7 +38,7 @@ function Layout() {
 
         <div className="flex items-center gap-4">
           <Input
-            defaultValue={queryState?.inputValue || ""}
+            defaultValue={queryState || ""}
             className="bg-white"
             placeholder="search your products.."
             onKeyDown={onInputSend}

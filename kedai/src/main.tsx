@@ -7,6 +7,7 @@ import CartPage from "./pages/cart.page";
 import DetailPage from "./pages/detail.page";
 import ProductsPage from "./pages/products.page";
 import RootLayout from "./layout";
+import ConfirmPaymentPage from "./pages/confirm_payment.page";
 
 // ROUTES
 const routes = [
@@ -35,6 +36,10 @@ const routes = [
         path: "products",
         Component: ProductsPage
       },
+      {
+        path: "confirm_payment",
+        Component: ConfirmPaymentPage
+      }
     ],
   },
 ];
