@@ -1,28 +1,14 @@
 import {
   nonEmpty,
+  object,
   pipe,
+  string,
   minLength,
   maxLength,
   union,
   literal,
-  array,
   InferOutput,
-  number,
-  object,
-  string,
 } from "valibot";
-
-export const productSchema = object({
-  id: string(),
-  imageUrl: string(),
-  title: string(),
-  description: string(),
-  price: number(),
-});
-
-export const productsSchema = object({
-  products: array(productSchema),
-});
 
 export const registerSchema = object({
   name: pipe(
@@ -49,6 +35,3 @@ export const loginSchema = object({
 
 export type registerSchemaType = InferOutput<typeof registerSchema>;
 export type loginSchemaType = InferOutput<typeof loginSchema>;
-
-export type Product = InferOutput<typeof productSchema>;
-export type Products = InferOutput<typeof productsSchema>;

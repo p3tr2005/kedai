@@ -8,6 +8,8 @@ import DetailPage from "./pages/detail.page";
 import ProductsPage from "./pages/products.page";
 import RootLayout from "./layout";
 import ConfirmPaymentPage from "./pages/confirm_payment.page";
+import RegisterPage from "./pages/register.page";
+import LoginPage from "./pages/login.page";
 
 // ROUTES
 const routes = [
@@ -34,13 +36,21 @@ const routes = [
       },
       {
         path: "products",
-        Component: ProductsPage
+        Component: ProductsPage,
       },
       {
         path: "confirm_payment",
-        Component: ConfirmPaymentPage
-      }
+        Component: ConfirmPaymentPage,
+      },
     ],
+  },
+  {
+    path: "/register",
+    Component: RegisterPage,
+  },
+  {
+    path: "/login",
+    Component: LoginPage,
   },
 ];
 
