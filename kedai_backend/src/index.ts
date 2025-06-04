@@ -2,7 +2,6 @@ import "dotenv/config";
 import express, { type Request, type Response } from "express";
 import { Products } from "./core/products";
 import cors from "cors";
-import { seed } from "./lib/seed";
 
 const App = express();
 
@@ -42,5 +41,3 @@ App.get("/products/:id", async (req: Request, res: Response) => {
 App.listen(3001, () => {
   console.log("APP RUNNING ON PORT 3001");
 });
-
-seed();
