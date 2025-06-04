@@ -1,31 +1,44 @@
-import express, { type Request, type Response } from "express"
-import cors from "cors"
-import data from "./data.json"
+import express, { type Request, type Response } from "express";
+import cors from "cors";
+import data from "./data.json";
 
 const App = express();
 
-App.use(cors())
+App.use(cors());
 
-App.get("/products", (_: Request, res: Response) => {
-    const products = data
+App.get("/products", (req: Request, res: Response) => {
+  const products = data;
 
-    setTimeout(() => {
+  const query = (req.query.search as string) || undefined;
 
-        res.status(200).json({ products })
-    }, 2000)
-})
+  if (!query) {
+    return setTimeout(() => {
+      res.status(200).json({ products });
+    }, 2000);
+  }
+
+  const found = data.find(
+    (product) => product.title.toLowerCase() === query.toLowerCase()
+  );
+
+  console.log("[FOUND] - ", found);
+
+  return setTimeout(() => {
+    res.status(200).json({ product: found });
+  }, 2000);
+});
 
 App.get("/products/:id", (req: Request, res: Response) => {
-    const id = req.params.id as string
+  const id = req.params.id as string;
 
-    console.log({ id })
+  console.log({ id });
 
-    const product = data.find((product) => product.id === id)
-    console.log({ product })
+  const product = data.find((product) => product.id === id);
+  console.log({ product });
 
-    res.status(200).json({ product })
-})
+  res.status(200).json({ product });
+});
 
 App.listen(3001, () => {
-    console.log("APP RUNNING ON PORT 3001")
-})
+  console.log("APP RUNNING ON PORT 3001");
+});

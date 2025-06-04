@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import HomePage from "./pages/home.page";
 import CartPage from "./pages/cart.page";
 import DetailPage from "./pages/detail.page";
+import ProductsPage from "./pages/products.page";
 import RootLayout from "./layout";
 
 // ROUTES
@@ -19,25 +20,29 @@ const routes = [
       },
       {
         path: "cart",
-        Component: CartPage
+        Component: CartPage,
       },
       {
         path: "product",
         children: [
           {
             path: ":id",
-            Component: DetailPage
-          }
-        ]
-      }
-    ]
+            Component: DetailPage,
+          },
+        ],
+      },
+      {
+        path: "products",
+        Component: ProductsPage
+      },
+    ],
   },
-]
+];
 
-const router = createBrowserRouter(routes)
+const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
+  </React.StrictMode>
 );
